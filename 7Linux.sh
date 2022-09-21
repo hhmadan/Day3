@@ -1,2 +1,4 @@
-awk -F'|' '{ a[$6]++} END{ for (i in a) print i "\t" a[i] }' access.log | sort -n
+#1cat var/log/httpd/access.log
+#2-3cat var/log/httpd/access.log | awk '{print $2}' | sort -nr | wc -l
+#4cat var/log/httpd/access.log | sort | uniq | awk '{print $8}' | tail -4
 
